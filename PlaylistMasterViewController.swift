@@ -12,9 +12,14 @@ class PlaylistMasterViewController: UIViewController {
 
     @IBOutlet weak var aButton: UIButton!
 
+    @IBOutlet weak var playlistImageView0: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         aButton.setTitle("Press me!", forState: .Normal)
+        
+        let playlist = Playlist(index: 0)
+        playlistImageView0.image = playlist.icon
         
     }
 
@@ -26,7 +31,7 @@ class PlaylistMasterViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showPlaylistDetail" {
             let playListDetailController = segue.destinationViewController as PlaylistDetailViewController
-            playListDetailController.segueLabelText = "You pressed the button"
+            playListDetailController.playlist = Playlist(index: 0)
         }
     }
 
