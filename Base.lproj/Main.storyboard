@@ -234,7 +234,7 @@
                                     <constraint firstItem="Mlc-mL-gw4" firstAttribute="top" secondItem="vgb-iH-8os" secondAttribute="top" constant="10" id="qjP-Km-BZO"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YzD-Ja-SXV">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YzD-Ja-SXV">
                                 <rect key="frame" x="0.0" y="64" width="320" height="290"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YzD-Ja-SXV" secondAttribute="height" multiplier="32:29" id="pDc-83-aib"/>

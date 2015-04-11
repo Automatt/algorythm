@@ -17,6 +17,8 @@ class PlaylistDetailViewController: UIViewController {
     @IBOutlet weak var playlistTitle: UILabel!
     @IBOutlet weak var playlistDescription: UILabel!
     
+    var artistArray: [UILabel] = []
+    
     @IBOutlet weak var playlistArtist0: UILabel!
     @IBOutlet weak var playlistArtist1: UILabel!
     @IBOutlet weak var playlistArtist2: UILabel!
@@ -27,21 +29,21 @@ class PlaylistDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        artistArray = [playlistArtist0, playlistArtist1, playlistArtist2, playlistArtist3, playlistArtist4, playlistArtist5, playlistArtist6]
+        
         if playlist != nil {
             playlistCoverImage.image = playlist!.largeIcon
             playlistCoverImage.backgroundColor = playlist!.backgroundColor
             playlistTitle.text = playlist!.title
             playlistDescription.text = playlist!.description
             
-            playlistArtist0.text = playlist!.artists[0]
-            playlistArtist1.text = playlist!.artists[1]
-            playlistArtist2.text = playlist!.artists[2]
-            playlistArtist3.text = playlist!.artists[3]
-            playlistArtist4.text = playlist!.artists[4]
-            playlistArtist5.text = playlist!.artists[5]
-            playlistArtist6.text = playlist!.artists[6]
+            for index in 0..<playlist!.artists.count {
+                let artist = playlist!.artists[index]
+                let label = artistArray[index]
+                label.text = artist
+            }
         }
-
     }
 
     override func didReceiveMemoryWarning() {
